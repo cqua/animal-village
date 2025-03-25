@@ -22,7 +22,7 @@ The game has a cycle for day and night. 1 hour in game passes every 90 seconds, 
 ### Rain
 Each morning there's a 1/7 chance it will be a rainy day. On rainy days, villagers mostly stay indoors, flowers are automatically watered, weed growth is sped up, and bugs do not spawn.
 ## Villagers
-Villagers are the heart of the game.
+Villagers are the heart of the game. Managing their friendship ties into every other mechanic.
 ### Villager Traits
 #### Personality
 Villagers can be **chill**, **nerdy**, or **preppy**. Their personality determines their dialog and their schedule.
@@ -99,16 +99,19 @@ RVP loss increases exponentially each time bothered in a single day
 Each villager each morning has a 1/30 chance of waking up sick. On a sick day, they will stay in bed, though the player can still enter their house. They will request medicine.
 ## Items
 ### Artifacts
+Can be sold or gifted.
 - Cowrie, spawns on waterfront
 - Sand Dollar, spawns on waterfront
 - Brown Mushroom, spawns in forest
 ### Bugs
+Can be sold or gifted.
 - Ant, spawns anywhere
 - Bee, spawns over flowers during day
 - Beetle, spawns on trees during day
 - Butterfly, spawns anywhere
 - Moth, spawns around lights at night
 ### Furniture
+Can be used in your home, sold or gifted.
 - Bed, villagers start with one
 - Table, villagers start with one
 - Lamp, villagers start with one
