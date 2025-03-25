@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwpaokj0omrl2"]
+
+[ext_resource type="Script" path="res://entities/seashell/seashell.gd" id="1_n2dca"]
+[ext_resource type="Texture2D" uid="uid://wro8m2mqem2u" path="res://assets/sprites/items/artifacts/spr_lionspaw.png" id="1_outt0"]
+[ext_resource type="Resource" uid="uid://bt0q3bu6htylt" path="res://resources/item/artifacts/artifact_lionspaw.tres" id="2_pii33"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o02ma"]
+
+[node name="Seashell" type="Area3D"]
+script = ExtResource("1_n2dca")
+item = ExtResource("2_pii33")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_o02ma")
+
+[node name="Decal" type="Decal" parent="."]
+size = Vector3(0.5, 0.5, 0.5)
+texture_albedo = ExtResource("1_outt0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

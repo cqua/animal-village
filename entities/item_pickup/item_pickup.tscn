@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnux3b7b2ey3f"]
+
+[ext_resource type="Script" path="res://entities/item_pickup/item_pickup.gd" id="1_8qpyx"]
+[ext_resource type="Texture2D" uid="uid://wro8m2mqem2u" path="res://assets/sprites/items/artifacts/spr_lionspaw.png" id="1_o420v"]
+[ext_resource type="Texture2D" uid="uid://bsltgieaiuwu5" path="res://assets/sprites/particles/particle_generic.png" id="3_eiien"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_705e5"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_o420v")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8fkip"]
+material = SubResource("StandardMaterial3D_705e5")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tr5qs"]
+size = Vector3(0.75, 1, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ew4j"]
+
+[node name="ItemPickup" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 2
+lock_rotation = true
+script = ExtResource("1_8qpyx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22737, 0)
+mesh = SubResource("QuadMesh_8fkip")
+
+[node name="Dropshadow" type="Decal" parent="."]
+size = Vector3(0.5, 1, 0.5)
+texture_albedo = ExtResource("3_eiien")
+modulate = Color(0, 0, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_tr5qs")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_2ew4j")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

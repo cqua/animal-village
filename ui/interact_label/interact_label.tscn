@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc8tuk1bfu20s"]
+
+[ext_resource type="Theme" uid="uid://164bhkajb7nm" path="res://assets/themes/white_label.tres" id="1_mywp4"]
+[ext_resource type="Script" path="res://ui/interact_label/interact_label.gd" id="2_6wmco"]
+
+[node name="InteractLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mywp4")
+script = ExtResource("2_6wmco")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 39.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mywp4")
+text = "Bob"
+horizontal_alignment = 1

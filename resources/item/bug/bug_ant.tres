@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://yegq00b82sp3"]
+
+[ext_resource type="Script" path="res://resources/item/item.gd" id="1_24phi"]
+
+[resource]
+script = ExtResource("1_24phi")
+name = "Ant"
+item_type = 1
+stack_size = 64

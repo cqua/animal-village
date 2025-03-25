@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bt0q3bu6htylt"]
+
+[ext_resource type="Script" path="res://resources/item/item.gd" id="1_dtecu"]
+[ext_resource type="Texture2D" uid="uid://wro8m2mqem2u" path="res://assets/sprites/items/artifacts/spr_lionspaw.png" id="2_st844"]
+
+[resource]
+script = ExtResource("1_dtecu")
+name = "Lion's Paw"
+sprite = ExtResource("2_st844")
+stack_size = 64

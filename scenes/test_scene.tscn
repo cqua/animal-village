@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddjkvov6873fs"]
+
+[ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_sdibm"]
+[ext_resource type="PackedScene" uid="uid://bp0bx6ctxxvhg" path="res://entities/floor.tscn" id="1_wd6xt"]
+[ext_resource type="PackedScene" uid="uid://c6s67f3314bmy" path="res://entities/player/controller/player.tscn" id="2_k76mg"]
+[ext_resource type="PackedScene" uid="uid://celtdj0en2gwg" path="res://entities/camera/camera.tscn" id="3_udigi"]
+[ext_resource type="PackedScene" uid="uid://dwpaokj0omrl2" path="res://entities/seashell/seashell.tscn" id="5_bid1j"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_sdibm")
+
+[node name="Floor" parent="." instance=ExtResource("1_wd6xt")]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_k76mg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0115279, -1.19209e-07, -0.0486627)
+
+[node name="Camera" parent="." instance=ExtResource("3_udigi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533011, 1.81311, 1.93969)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.979283, -0.20034, 0.0294764, 0, 0.145565, 0.989349, -0.202497, -0.968852, 0.142549, 0, 0, 0)
+
+[node name="Seashell" parent="." instance=ExtResource("5_bid1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85019, 0, 1.68576)

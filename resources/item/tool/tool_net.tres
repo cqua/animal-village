@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://b17wjm76687kv"]
+
+[ext_resource type="Script" path="res://resources/item/item.gd" id="1_2hqqf"]
+
+[resource]
+script = ExtResource("1_2hqqf")
+name = "Bugnet"
+item_type = 4
+stack_size = 1

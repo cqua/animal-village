@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b17bs32346ngb"]
+
+[sub_resource type="SystemFont" id="SystemFont_yp45r"]
+font_names = PackedStringArray("Consolas")
+
+[resource]
+Label/font_sizes/font_size = 12
+Label/fonts/font = SubResource("SystemFont_yp45r")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bmvaaynweqifo"]
+
+[ext_resource type="Script" path="res://resources/item/item.gd" id="1_5pmwp"]
+
+[resource]
+script = ExtResource("1_5pmwp")
+name = "Table"
+item_type = 2
+stack_size = 64
