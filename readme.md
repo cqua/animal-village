@@ -34,31 +34,39 @@ Villagers can be **preppy**, **nerdy**, or **chill**. Their personality
 Each npc villager has a relationship to player value (RVP) which measures how good friends you are on a scale 0-100. Each interaction has an RVP range it is able to happen in. Many interactions also affect RVP. RVP starts at 10 and degrades by 1 each day.
 ### Interactions
 #### Chatting
-Villagers have a few randomized lines of dialog each day based on friendship and recent events. 
+Villagers have a few randomized lines of dialog each day based on friendship and recent events.
+
 RPV +1.
 #### Ask Favor
 Once a day, a villager can ask the player for a favor. This has a random chance to trigger when chatting. This may also be triggered if the player is standing nearby, causing the villager to approach.
+
 Favors can take the following forms:
 ##### Quiz
 Will ask you a question that may relate to:
 - Their hobby
 - Their feelings on another villager
 - Recent events
+
 RVP change depends on how much they like your answer, within a range of (-1,+2)
 ##### Delivery
 Will give the player an item to deliver to another villager.
+
 RVP +3 if successful
 ##### Request
 Will ask for an item related to their hobby, or Medicine if sick
+
 RVP +3
+
 Bonus points for quality of item
 #### Gift Giving
 Villagers have a chance to gift the player items, usually furniture. The probability and quality depend on RPV. The probability also increases when players pick up trash and plant flowers.
 #### Gift Receiving
 After chatting with a villager, the player can choose an item from their inventory to gift away.
+
 RVP change depends on how liked the gift is, which depends on personality, hobby, item quality, and if they already own the item.
 #### Bother
 If the player does something that bothers a villager, they will be bothered and chastise the player.
+
 Actions that bother villagers are:
 - hitting with tool - RVP -1
 - being pushed - RVP -1
@@ -66,51 +74,81 @@ Actions that bother villagers are:
 - stepping on flowers (flower hobby only) - RVP -1
 - scaring bugs (bug hobby only) - RVP -1
 - failing a delivery favor - RVP -2
+
 RVP loss increases exponentially each time bothered in a single day
 ## Time
 The game has a cycle for day and night. 1 hour in game passes every 90 seconds, and a full day is 36 minutes. Time affects villagers' schedules dependent on their personality, when the shop is open, and what bugs are out. The player can go to bed to advance time. The day is divided into six sections.
 ### H06-09
 Early morning.
+
 Chill: Asleep.
+
 Nerdy: Wandering their home.
+
 Preppy: Doing their hobby.
+
 Shop is open.
+
 The player can go to bed to wake at H14.
 ### H10-13
 Late morning.
+
 Chill: Wandering their home.
+
 Nerdy: Doing their hobby.
+
 Preppy: Doing their hobby.
+
 Shop is open.
+
 The player can go to bed to wake at H22.
 ### H14-17
 Afternoon.
+
 Chill: Doing their hobby.
+
 Nerdy: Doing their hobby.
+
 Preppy: Doing their hobby.
+
 Shop is open.
+
 The player can go to bed to wake at H22.
 ### H18-21
 Evening.
+
 Chill: Doing their hobby.
+
 Nerdy: Doing their hobby.
+
 Preppy: Wandering their home.
+
 Shop is open.
+
 The player can go to bed to wake at H06.
 ### H22-01
 Midnight.
-Evening.
+
 Chill: Doing their hobby.
+
 Nerdy: Wandering their home.
+
 Preppy: Asleep.
+
 Shop is closed.
+
 The player can go to bed to wake at H06.
 ### H02-05
 Wee Hours.
+
 Chill: Asleep.
+
 Nerdy: Asleep.
+
 Preppy: Asleep.
+
 Shop is closed.
+
 The player can go to bed to wake at H14.
 ## Items
 ### Artifacts
@@ -149,11 +187,11 @@ Jock, Goth, Upbeat
 ### Hobbies
 collect furniture, collect shells
 ### Favors
-retrieve item from another villager
-hide and seek
-ask another villager a question
-offering purchase
-offering sale
+- retrieve item from another villager
+- hide and seek
+- ask another villager a question
+- offering purchase
+- offering sale
 ### Bugs
 - Bee, spawns over flowers during day
 - Dragonfly, spawns in forest during day
