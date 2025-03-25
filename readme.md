@@ -47,7 +47,9 @@ Villagers can be **chill**, **nerdy**, or **preppy**. Their personality determin
 - 18:00 Asleep
 #### Hobby
 **Bugs:** Villagers with the bugs hobby will spend most of their time in the forest. They will catch bugs. Many of their interactions will revolve around bugs.
+
 **Gardening:** Villagers with the gardening hobby will spend most of their time in the flower field. They will water plants and weed. Many of their interactions will revolve around flowers.
+
 **Strolling:** Villagers with the strolling hobby wander anywhere.
 #### Relationship Values
 Each npc villager has a relationship to player value (RVP) which measures how good friends you are on a scale 0-100. Each interaction has an RVP range it is able to happen in. Many interactions also affect RVP. RVP starts at 10 and degrades by 1 each day.
