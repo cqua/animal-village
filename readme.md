@@ -1,10 +1,6 @@
 # Animal Village
 ## Core Concept
-You are a new resident in a village.
-## Pillars:
-### Family
-### Friendship
-### Community
+This is a game about community. You are a new resident in a village. You are a new resident in a village and you talk to and do activities with the other villagers to build your relationship.
 ## Setting
 The game takes place in a village with the following features:
 ### Town Center
@@ -17,7 +13,7 @@ Each npc villager has a house with a few pieces of furniture, including a bed. T
 An area with flower beds. The villagers can plant and water flowers here. Weeds will grow periodically and can be weeded out. Flowers have hp and will die if it is drained. Flowers lose hp by being stepped on, being left unwatered for a day, being near a weed. Bugs spawn here.
 ### Forest
 A collection of trees away from the houses. Bugs and artifacts spawn here.
-### Waterside
+### Waterfront
 A beach by the water. Artifacts spawn here.
 ### Player’s Home
 A house similar to the npc houses. The player has the freedom to place furniture here.
@@ -99,8 +95,8 @@ Actions that bother villagers are:
 RVP loss increases exponentially each time bothered in a single day
 ## Items
 ### Artifacts
-- Cowrie, spawns on beach
-- Sand Dollar, spawns on beach
+- Cowrie, spawns on waterfront
+- Sand Dollar, spawns on waterfront
 - Brown Mushroom, spawns in forest
 ### Bugs
 - Ant, spawns anywhere
@@ -129,6 +125,13 @@ RVP loss increases exponentially each time bothered in a single day
 Can be sold, or gifted to reduce RVP.
 - Weeds, obtained by weeding the flower fields.
 
+## Assets Needed
+- Terrain, including town center, forest, and waterfront
+- Shop exterior and interior
+- House exterior and interior
+- Character models for Player, Shopkeep, and at least 3 villagers
+- Character animations for stand, sit, walk, talk, water plant, catch bug, spread seed, open door, sleep, sick
+
 ## Future Goals
 - Option for time to pass in real time
 ### Personalities
@@ -145,5 +148,5 @@ collect furniture, collect shells
 - Dragonfly, spawns in forest during day
 - Firefly, spawns in forest at night
 - Grasshopper, spawns in forest during day
-- Isopod, spawns on the beach
+- Isopod, spawns on the waterfront
 - Spider, spawns on trees
