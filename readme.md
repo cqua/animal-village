@@ -139,7 +139,7 @@ Can be sold, or gifted to reduce RVP.
 - House exterior and interior
 - Character models for Player, Shopkeep, and at least 3 villagers
 - Character animations for stand, sit, walk, talk, water plant, catch bug, spread seed, open door, sleep, sick
-- Bugnet, watering can models
+- Bugnet, watering can, umbrella models
 - Furniture models and icons in inventory
 - Trees, flowers, weeds (could be models or sprites)
 - Bug sprites, animated
