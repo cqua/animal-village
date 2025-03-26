@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_dtecu")
 name = "Lion's Paw"
+item_type = 0
 sprite = ExtResource("2_st844")
 stack_size = 64

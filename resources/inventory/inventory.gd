@@ -37,7 +37,11 @@ static func drop_item_from_slot(index:int, count:=-1):
 	if count<0:
 		count=slot.count
 	for i in range(0,count):
-		Game.create_item_pickup(slot.item, Player.get_position() + Vector3(randf()-.5,0,randf()-.5))
+		var position = Player.get_position() + Vector3(randf()-.5,0,randf()-.5)
+		if slot.item.item_type == Item.ItemType.Bug:
+			Game.spawn_bug(slot.item, position)
+		else:
+			Game.create_item_pickup(slot.item, position)
 	
 	slot.count -= count
 	if slot.count <= 0:

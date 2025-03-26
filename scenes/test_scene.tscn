@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddjkvov6873fs"]
+[gd_scene load_steps=7 format=3 uid="uid://ddjkvov6873fs"]
 
 [ext_resource type="Script" path="res://scenes/test_scene.gd" id="1_sdibm"]
 [ext_resource type="PackedScene" uid="uid://bp0bx6ctxxvhg" path="res://entities/floor.tscn" id="1_wd6xt"]
 [ext_resource type="PackedScene" uid="uid://c6s67f3314bmy" path="res://entities/player/controller/player.tscn" id="2_k76mg"]
 [ext_resource type="PackedScene" uid="uid://celtdj0en2gwg" path="res://entities/camera/camera.tscn" id="3_udigi"]
-[ext_resource type="PackedScene" uid="uid://dwpaokj0omrl2" path="res://entities/seashell/seashell.tscn" id="5_bid1j"]
+[ext_resource type="PackedScene" uid="uid://dwpaokj0omrl2" path="res://entities/collectable/seashell.tscn" id="5_bid1j"]
+[ext_resource type="PackedScene" uid="uid://cmk38m7o256dr" path="res://entities/collectable/ant.tscn" id="6_jfq8d"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_sdibm")
@@ -23,3 +24,24 @@ transform = Transform3D(0.979283, -0.20034, 0.0294764, 0, 0.145565, 0.989349, -0
 
 [node name="Seashell" parent="." instance=ExtResource("5_bid1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85019, 0, 1.68576)
+
+[node name="Floor2" parent="." instance=ExtResource("1_wd6xt")]
+transform = Transform3D(6.41403, 14.6581, 0, -14.6581, 6.41403, 0, 0, 0, 16, -7.06955, 0, 0)
+
+[node name="Seashell3" parent="." instance=ExtResource("5_bid1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39135, 0, 4.33117)
+
+[node name="Ant" parent="." instance=ExtResource("6_jfq8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Ant2" parent="." instance=ExtResource("6_jfq8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Ant3" parent="." instance=ExtResource("6_jfq8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Ant4" parent="." instance=ExtResource("6_jfq8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Ant5" parent="." instance=ExtResource("6_jfq8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)

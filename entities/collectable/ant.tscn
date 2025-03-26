@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmk38m7o256dr"]
+
+[ext_resource type="Script" path="res://entities/collectable/ant.gd" id="1_bsa6e"]
+[ext_resource type="Resource" uid="uid://yegq00b82sp3" path="res://resources/item/bug/bug_ant.tres" id="2_kfu6x"]
+[ext_resource type="Texture2D" uid="uid://c8f1v6xdh54c2" path="res://assets/sprites/items/ant/spr_ant.png" id="3_4u8md"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o02ma"]
+
+[node name="Ant" type="Area3D"]
+script = ExtResource("1_bsa6e")
+item = ExtResource("2_kfu6x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_o02ma")
+
+[node name="Decal" type="Decal" parent="."]
+size = Vector3(0.5, 2, 0.5)
+texture_albedo = ExtResource("3_4u8md")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

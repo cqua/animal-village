@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://4i7w6cguajrn" path="res://entities/player/render/player_render.tscn" id="2_egf0u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7hm7f"]
+size = Vector3(0.5, 1, 0.5)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 9
@@ -11,6 +12,7 @@ collision_mask = 9
 script = ExtResource("1_w37xf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7hm7f")
 
 [node name="PlayerRender" parent="." instance=ExtResource("2_egf0u")]

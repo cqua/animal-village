@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://yegq00b82sp3"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://yegq00b82sp3"]
 
 [ext_resource type="Script" path="res://resources/item/item.gd" id="1_24phi"]
+[ext_resource type="Texture2D" uid="uid://c8f1v6xdh54c2" path="res://assets/sprites/items/ant/spr_ant.png" id="2_ip6wp"]
 
 [resource]
 script = ExtResource("1_24phi")
 name = "Ant"
 item_type = 1
-stack_size = 64
+sprite = ExtResource("2_ip6wp")
+stack_size = 16

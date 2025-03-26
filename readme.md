@@ -133,6 +133,9 @@ Can be used in your home, sold or gifted.
 Can be sold, or gifted to reduce RVP.
 - Weeds, obtained by weeding the flower fields.
 
+## Menus
+- Inventory
+
 ## Assets Needed
 - Terrain, including town center, forest, and waterfront
 - Shop exterior and interior

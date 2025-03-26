@@ -13,12 +13,11 @@ func _process(delta):
 
 func set_item(_item:Item):
 	item = _item
-	mesh.mesh.material.texture = item.sprite
+	mesh.mesh.material.albedo_texture = item.sprite
 
 func _on_area_3d_body_entered(body):
 	if body is PlayerController:
 		Player.add_interactable(self)
-
 
 func _on_area_3d_body_exited(body):
 	if body is PlayerController:

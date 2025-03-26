@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwpaokj0omrl2"]
 
-[ext_resource type="Script" path="res://entities/seashell/seashell.gd" id="1_n2dca"]
+[ext_resource type="Script" path="res://entities/collectable/collectable.gd" id="1_n2dca"]
 [ext_resource type="Texture2D" uid="uid://wro8m2mqem2u" path="res://assets/sprites/items/artifacts/spr_lionspaw.png" id="1_outt0"]
 [ext_resource type="Resource" uid="uid://bt0q3bu6htylt" path="res://resources/item/artifacts/artifact_lionspaw.tres" id="2_pii33"]
 

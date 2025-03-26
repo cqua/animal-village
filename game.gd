@@ -5,6 +5,7 @@ const HOUR_LENGTH = 90.0
 static var time_scale := 1.0
 
 static var item_pickup_prefab:Resource
+static var bug_prefab:Resource
 
 static var root:Node3D
 
@@ -18,6 +19,7 @@ static func load(_root:Node3D):
 	Inventory.initialize()
 	
 	item_pickup_prefab = load("res://entities/item_pickup/item_pickup.tscn")
+	bug_prefab = load("res://entities/collectable/ant.tscn")
 	
 static func update_clock(delta:float):
 	delta *= time_scale
@@ -34,3 +36,10 @@ static func create_item_pickup(item:Item, position:Vector3):
 	root.add_child(pickup)
 	pickup.position = position
 	pickup.set_item(item)
+
+
+static func spawn_bug(item:Item, position:Vector3):
+	var bug = bug_prefab.instantiate()
+	root.add_child(bug)
+	bug.position = position
+	bug.run_away()

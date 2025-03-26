@@ -8,12 +8,10 @@ func _ready():
 func _on_body_entered(body):
 	if body is PlayerController:
 		Player.add_interactable(self)
-		print('adding')
 
 func _on_body_exited(body):
 	if body is PlayerController:
 		Player.remove_interactable(self)
-		print('removing')
 
 func interact():
 	if Inventory.add_item(item):
