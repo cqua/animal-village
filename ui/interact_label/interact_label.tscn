@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc8tuk1bfu20s"]
 
 [ext_resource type="Theme" uid="uid://164bhkajb7nm" path="res://assets/themes/white_label.tres" id="1_mywp4"]
-[ext_resource type="Script" path="res://ui/interact_label/interact_label.gd" id="2_6wmco"]
+[ext_resource type="Script" uid="uid://xjtrea4sxar5" path="res://ui/interact_label/interact_label.gd" id="2_6wmco"]
 
 [node name="InteractLabel" type="Control"]
 layout_mode = 3

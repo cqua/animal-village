@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dj1vlfii6liqf"]
 
-[ext_resource type="Script" path="res://ui/day_clock/day_clock.gd" id="1_belht"]
+[ext_resource type="Script" uid="uid://bkni7eptjilpi" path="res://ui/day_clock/day_clock.gd" id="1_belht"]
 [ext_resource type="Theme" uid="uid://164bhkajb7nm" path="res://assets/themes/white_label.tres" id="1_nav0o"]
 
 [node name="DayClock" type="Control"]

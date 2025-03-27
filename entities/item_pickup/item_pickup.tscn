@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnux3b7b2ey3f"]
 
-[ext_resource type="Script" path="res://entities/item_pickup/item_pickup.gd" id="1_8qpyx"]
+[ext_resource type="Script" uid="uid://ctcm1skxaskbt" path="res://entities/item_pickup/item_pickup.gd" id="1_8qpyx"]
 [ext_resource type="Texture2D" uid="uid://bsltgieaiuwu5" path="res://assets/sprites/particles/particle_generic.png" id="3_eiien"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_705e5"]

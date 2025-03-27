@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8ergnbytxkuy"]
 
-[ext_resource type="Script" path="res://ui/logger/logger.gd" id="1_34a0c"]
+[ext_resource type="Script" uid="uid://cut8r5j4b1nuk" path="res://ui/logger/logger.gd" id="1_34a0c"]
 
 [node name="Logger" type="Control"]
 layout_mode = 3

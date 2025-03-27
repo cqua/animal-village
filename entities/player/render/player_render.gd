@@ -4,7 +4,7 @@ class_name PlayerRender
 var target_facing = Vector2.UP
 
 func set_target_facing(facing_angle:float):
-	target_facing = Vector2.from_angle(facing_angle)
+    target_facing = Vector2.from_angle(facing_angle)
 
 func _process(delta):
-	look_at(global_position + Vector3(target_facing.x,0,target_facing.y), Vector3.UP)
+    look_at(global_position + Vector3(target_facing.x,0,target_facing.y), Vector3.UP)
