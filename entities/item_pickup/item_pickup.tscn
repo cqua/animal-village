@@ -1,16 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnux3b7b2ey3f"]
+[gd_scene load_steps=9 format=3 uid="uid://bnux3b7b2ey3f"]
 
 [ext_resource type="Script" uid="uid://ctcm1skxaskbt" path="res://entities/item_pickup/item_pickup.gd" id="1_8qpyx"]
+[ext_resource type="Texture2D" uid="uid://c8f1v6xdh54c2" path="res://assets/sprites/items/ant/spr_ant.png" id="2_pqrf3"]
+[ext_resource type="Shader" uid="uid://3ulwfh200obv" path="res://assets/shaders/extrude.gdshader" id="2_xhpdc"]
 [ext_resource type="Texture2D" uid="uid://bsltgieaiuwu5" path="res://assets/sprites/particles/particle_generic.png" id="3_eiien"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_705e5"]
-transparency = 1
-cull_mode = 2
-shading_mode = 0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhpdc"]
+render_priority = 0
+shader = ExtResource("2_xhpdc")
+shader_parameter/extruded_alpha_cull = 0.5
+shader_parameter/opaque_extrude = true
+shader_parameter/keep_image = true
+shader_parameter/image_alpha_cull = 0.5
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/color_mix = Color(0, 0, 0, 1)
+shader_parameter/mix_strength = 0.0
+shader_parameter/Texture = ExtResource("2_pqrf3")
+shader_parameter/texture_calls = 20
+shader_parameter/ray_bias = 1.0
+shader_parameter/infinite_holes = false
+shader_parameter/Hframes = 1
+shader_parameter/Vframes = 1
+shader_parameter/frame = 0
 
-[sub_resource type="QuadMesh" id="QuadMesh_8fkip"]
-material = SubResource("StandardMaterial3D_705e5")
-size = Vector2(0.5, 0.5)
+[sub_resource type="BoxMesh" id="BoxMesh_hvkp4"]
+material = SubResource("ShaderMaterial_xhpdc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tr5qs"]
 size = Vector3(0.75, 1, 0.75)
@@ -24,11 +38,11 @@ lock_rotation = true
 script = ExtResource("1_8qpyx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22737, 0)
-mesh = SubResource("QuadMesh_8fkip")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.05, 0, 1.22737, 0)
+mesh = SubResource("BoxMesh_hvkp4")
 
 [node name="Dropshadow" type="Decal" parent="."]
-size = Vector3(0.5, 1, 0.5)
+size = Vector3(0.5, 0.1, 0.5)
 texture_albedo = ExtResource("3_eiien")
 modulate = Color(0, 0, 0, 1)
 

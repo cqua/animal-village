@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d206gd8401djb"]
+
+[sub_resource type="Gradient" id="Gradient_wuwyl"]
+offsets = PackedFloat32Array(0, 0.214286, 0.84127)
+colors = PackedColorArray(0.937255, 1, 0.603922, 0, 0.914631, 0.999994, 0.264341, 0.498039, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mmrvi"]
+gradient = SubResource("Gradient_wuwyl")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ru6v"]
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_mmrvi")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t8xwd"]
+material = SubResource("StandardMaterial3D_0ru6v")
+height = 1.0
+cap_top = false
+cap_bottom = false
+
+[node name="InteractHighlight" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_t8xwd")
