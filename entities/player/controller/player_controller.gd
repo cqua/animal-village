@@ -11,7 +11,6 @@ var facing_angle:float
 
 var input_dir:Vector2
 var pause_buffer:float
-var standing_still_timer:float
 
 func _ready():
 	Player.set_controller(self)
@@ -29,20 +28,15 @@ func _process(delta):
 	elif pause_buffer > 0:
 		pause_buffer -= delta
 	else:
-		if Input.is_action_just_pressed("Confirm"):
+		if Input.is_action_just_pressed("Interact"):
 			print(Player._interactables.size())
 			Player.interact()
 		
-		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 		if input_dir.x != 0 or input_dir.y != 0:
-			standing_still_timer = 0
+			Player.standing_still_timer = 0
 		else:
-			standing_still_timer += delta
-		
-		if standing_still_timer > .15:
-			UI.display_interact_label()
-		else:
-			UI.hide_interact_label()
+			Player.standing_still_timer += delta
 
 func _physics_process(delta):
 	delta *= Game.time_scale
@@ -67,4 +61,5 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+	render.set_velocity(velocity)
 	render.set_target_facing(facing_angle)

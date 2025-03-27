@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhti6yn7q0poq"]
+
+[ext_resource type="Script" uid="uid://bpwp4h0b12grb" path="res://entities/debug/3dcursor/debug_3dcursor.gd" id="1_sqfmk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcl8s"]
+cull_mode = 1
+albedo_color = Color(1, 0.997649, 0.338858, 0.513726)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cm38j"]
+material = SubResource("StandardMaterial3D_tcl8s")
+
+[node name="Debug_3dcursor" type="Node3D"]
+script = ExtResource("1_sqfmk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_cm38j")

@@ -2,28 +2,30 @@ extends Control
 
 var timer:float
 
+var show := false
+
 func _process(delta):
-	if not visible:
-		timer = 1
-		clear_text()
-		return
-	
 	timer += delta
 	
-	position = CameraController.world_to_screen(Player.get_position()) + Vector2.UP * 80
-	if timer > .15:
+	if Game.cursor and Player.standing_still_timer > .6:
+		position = UI.get_mouse_position_screen() + Vector2.UP * 20
 		timer = 0
-		var n = Player.get_first_interactable()
+		var n = Game.cursor.get_first_interactable()
 		if n:
 			set_text(n.item.name)
 		else:
 			clear_text()
+	else:
+		clear_text()
 	
+	if show:
+		scale.y = move_toward(scale.y,1,delta*8)
+	else:
+		scale.y = move_toward(scale.y,0,delta*8)
 
 func set_text(text:String):
 	$Label.text = text
-	$Label.visible=true
+	show = true
 
 func clear_text():
-	$Label.text = ''
-	$Label.visible=false
+	show = false

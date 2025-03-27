@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm3rfpwgwmxje"]
+
+[ext_resource type="Script" uid="uid://b8bf7hhtor6la" path="res://entities/cursor_collider/cursor_collider.gd" id="1_1elgv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_num6m"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[node name="CursorCollider" type="Node3D"]
+script = ExtResource("1_1elgv")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_num6m")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

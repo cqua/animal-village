@@ -4,6 +4,12 @@ class_name Player
 static var _controller
 
 static var _interactables:Array[Node3D]
+static var standing_still_timer:float
+
+static func is_instanced():
+	if _controller:
+		return true
+	return false
 
 static func set_controller(c:PlayerController):
 	_controller = c

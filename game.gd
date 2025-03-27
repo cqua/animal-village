@@ -13,6 +13,8 @@ static var hour:int
 static var minute:int
 static var hour_timer:float
 
+static var cursor:CursorCollider
+
 static func load(_root:Node3D):
 	root = _root
 	Item.load()
@@ -20,6 +22,9 @@ static func load(_root:Node3D):
 	
 	item_pickup_prefab = load("res://entities/item_pickup/item_pickup.tscn")
 	bug_prefab = load("res://entities/collectable/ant.tscn")
+	
+	cursor = load("res://entities/cursor_collider/cursor_collider.tscn").instantiate()
+	root.add_child(cursor)
 	
 static func update_clock(delta:float):
 	delta *= time_scale

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://busbvkpd8mndt"]
+
+[ext_resource type="PackedScene" uid="uid://bj0fqpbrqhsyi" path="res://cameras/orbit_camera/orbit_camera.tscn" id="1_im37l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4adyp"]
+cull_mode = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_h8avn"]
+material = SubResource("StandardMaterial3D_4adyp")
+size = Vector3(8, 8, 8)
+
+[sub_resource type="Environment" id="Environment_im37l"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.419813, 0.419813, 0.419813, 1)
+
+[node name="TestRoom" type="Node3D"]
+
+[node name="OrbitCamera" parent="." instance=ExtResource("1_im37l")]
+camera_distance = 12.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_h8avn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.881444, 0, 0.472289, -0.462566, 0.201864, 0.863298, -0.0953384, -0.979414, 0.177932, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_im37l")
