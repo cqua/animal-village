@@ -7,7 +7,7 @@
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 9
-collision_mask = 9
+collision_mask = 13
 script = ExtResource("1_w37xf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -15,3 +15,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7hm7f")
 
 [node name="PlayerRender" parent="." instance=ExtResource("2_egf0u")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

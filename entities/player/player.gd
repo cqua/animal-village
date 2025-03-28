@@ -1,9 +1,8 @@
 extends Resource
 class_name Player
 
-static var _controller
+static var _controller:PlayerController
 
-static var _interactables:Array[Node3D]
 static var standing_still_timer:float
 
 static func is_instanced():
@@ -20,27 +19,6 @@ static func get_position() -> Vector3:
 static func get_angle() -> float:
 	return _controller.facing_angle
 
-static func add_interactable(node:Node3D):
-	_interactables.push_back(node)
-	
-static func remove_interactable(node:Node3D):
-	for i in range(0,_interactables.size()):
-		if _interactables[i]==node:
-			_interactables.remove_at(i)
-			return
-
-static func interact():
-	var n = get_first_interactable()
-	if n:
-		_interactables.pop_front()
-		n.interact()
-		return
-
-static func get_first_interactable():
-	_interactables = _interactables.filter(func(n): return is_instance_valid(n))
-	_interactables.sort_custom(
-		func(a, b): 
-			return (_controller.global_position.distance_to(a.global_position) < 
-				_controller.global_position.distance_to(b.global_position)))
-	if _interactables.size() > 0:
-		return _interactables[0]
+static func look_at(object:Node3D):
+	var direction := (object.global_position - _controller.global_position).normalized()
+	_controller.force_rotation(Vector2(direction.x,direction.z).angle())

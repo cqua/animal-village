@@ -16,6 +16,3 @@ shape = SubResource("BoxShape3D_o02ma")
 [node name="Decal" type="Decal" parent="."]
 size = Vector3(0.5, 0.5, 0.5)
 texture_albedo = ExtResource("1_outt0")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -14,6 +14,9 @@ static func initialize():
 
 static func get_slot_at(n:int) -> ItemSlot:
 	return _slots[n]
+	
+static func set_slot_at(index:int, slot:ItemSlot):
+	_slots[index] = slot		
 
 static func add_item(item:Item, count:=1) -> bool:
 	var empty_slot_index = -1
@@ -45,5 +48,9 @@ static func drop_item_from_slot(index:int, count:=-1):
 	
 	slot.count -= count
 	if slot.count <= 0:
-		slot.count = 0
-		slot.item = Item.NONE
+		delete_slot_at(index)
+
+static func delete_slot_at(index:int):
+	var slot = _slots[index]
+	slot.count = 0
+	slot.item = Item.NONE

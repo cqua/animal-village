@@ -1,7 +1,7 @@
 extends Node3D
 class_name CursorCollider
 
-var interactables:Array[Node3D]
+var interactables:Array[Interactable]
 var _bodies:Array[Node3D]
 
 func _process(delta):
@@ -17,9 +17,8 @@ func get_first_interactable():
 		return interactables[0]
 
 func _on_area_3d_area_entered(area:Area3D):
-	if area.has_method('interact'):
+	if area is Interactable:
 		interactables.push_back(area)
-	print(area.name)
 
 func _on_area_3d_area_exited(area):
 	for i in range(0,interactables.size()):
@@ -29,7 +28,6 @@ func _on_area_3d_area_exited(area):
 
 func _on_area_3d_body_entered(body):
 	_bodies.push_back(body)
-	print(body.name)
 
 func _on_area_3d_body_exited(body):
 	for i in range(0,_bodies.size()):

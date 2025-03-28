@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://crgw0lau7nl4x"]
+
+[ext_resource type="Script" uid="uid://bka13hi4e0pmw" path="res://ui/dialog_box/dialog_box.gd" id="1_it7s7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it7s7"]
+bg_color = Color(0, 0, 0, 0.603922)
+border_width_left = 8
+border_width_right = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="Theme" id="Theme_m2gu7"]
+Panel/styles/panel = SubResource("StyleBoxFlat_it7s7")
+
+[sub_resource type="Theme" id="Theme_it7s7"]
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_it7s7"]
+font_size = 24
+
+[node name="DialogBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_it7s7")
+
+[node name="PanelContainer" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.6
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_m2gu7")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_it7s7")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_it7s7")

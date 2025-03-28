@@ -9,11 +9,12 @@ static var bug_prefab:Resource
 
 static var root:Node3D
 
-static var hour:int
+static var hour:int = 6
 static var minute:int
 static var hour_timer:float
 
 static var cursor:CursorCollider
+static var interact_highlight:InteractHighlight
 
 static func load(_root:Node3D):
 	root = _root
@@ -22,6 +23,8 @@ static func load(_root:Node3D):
 	
 	item_pickup_prefab = load("res://entities/item_pickup/item_pickup.tscn")
 	bug_prefab = load("res://entities/collectable/ant.tscn")
+	interact_highlight = load("res://entities/interact_highlight/interact_highlight.tscn").instantiate()
+	root.add_child(interact_highlight)
 	
 	cursor = load("res://entities/cursor_collider/cursor_collider.tscn").instantiate()
 	root.add_child(cursor)

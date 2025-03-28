@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d23fnwn24v637"]
+[gd_scene load_steps=2 format=3 uid="uid://dm0ljavjgrtav"]
 
-[ext_resource type="Script" uid="uid://di1o8tmbvx3th" path="res://ui/inventory_menu/inventory_menu.gd" id="1_6x4mg"]
+[ext_resource type="Script" uid="uid://b12pndsmwph8" path="res://ui/inventory_menu/inventory_mouse.gd" id="1_d7iit"]
 
-[node name="InventoryMenu" type="Control"]
+[node name="InventoryMouse" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6x4mg")
+script = ExtResource("1_d7iit")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -36,9 +36,9 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
-[node name="HoveredItemLabel" type="Label" parent="Panel"]
+[node name="HeldItemSprite" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(15, 15)
 layout_mode = 0
-offset_left = 183.0
-offset_top = 263.0
-offset_right = 237.0
-offset_bottom = 286.0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2

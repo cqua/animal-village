@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 UI="*res://ui/ui.tscn"
 
+[display]
+
+window/size/initial_position_type=3
+
 [input]
 
 OpenMenu={
