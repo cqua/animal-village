@@ -1,10 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmk38m7o256dr"]
+[gd_scene load_steps=8 format=4 uid="uid://cmk38m7o256dr"]
 
 [ext_resource type="Script" uid="uid://d36o7kcywix0l" path="res://entities/collectable/ant.gd" id="1_bsa6e"]
 [ext_resource type="Resource" uid="uid://yegq00b82sp3" path="res://resources/item/bug/bug_ant.tres" id="2_kfu6x"]
-[ext_resource type="Texture2D" uid="uid://c8f1v6xdh54c2" path="res://assets/sprites/items/ant/spr_ant.png" id="3_4u8md"]
+[ext_resource type="Texture2D" uid="uid://bu4ka02y616nx" path="res://assets/models/fauna/ant/ant_spr_ant.png" id="3_xtufi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o02ma"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7j20w"]
+resource_name = "Material.003"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("3_xtufi")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0wrda"]
+_surfaces = [{
+"aabb": AABB(-0.21, 0, -0.4, 0.42, 0.0763835, 0.8),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAAAAQABgAHAAAABwADAAAABwAIAAMA"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("/3////9/AAD//wAAAAAAAP//AAD/fwAA/3+fawAAAAD/f59r//8AAP//AAD//wAAAAAAAP//AAAAAAAA/38AAAAAAAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h0iyk"]
+resource_name = "ant_Plane_001"
+_surfaces = [{
+"aabb": AABB(-0.21, 0, -0.4, 0.42, 0.0763835, 0.8),
+"attribute_data": PackedByteArray("z9MWvv//LXz//xa+z9MtfJ+nFr7P0y18z9MWvp+nLXyfp///z9MWvs/T//+fpxa+z9P/////Fr7/////z9MWvg=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0A"),
+"material": SubResource("StandardMaterial3D_7j20w"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(1.5411, 1.96799, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("/3////9/yML//wAAAADNwv//AAD/f8TC/3+fawAA0cIAAAAA/3/Iwv9/n2sAAM3C/3////9/xMIAAAAAAADRwgAAAAD//32+/3////9/gr7/f59r//94vgAAAAD/f4a+/3+fa///fb7//wAA/3+Cvv//AAD//3i+/3////9/hr6W5txymuYPc5PmsHKd5jxz2/JnmQ/zZJmw8mqZPPNhmf3ygZox84Ka0PKAmlzzgpp95f5yfOUyc37l0XJ75V1z")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0wrda")
 
 [node name="Ant" type="Area3D"]
 script = ExtResource("1_bsa6e")
@@ -13,9 +53,9 @@ item = ExtResource("2_kfu6x")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_o02ma")
 
-[node name="Decal" type="Decal" parent="."]
-size = Vector3(0.5, 2, 0.5)
-texture_albedo = ExtResource("3_4u8md")
+[node name="Ant" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_h0iyk")
+skeleton = NodePath("")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

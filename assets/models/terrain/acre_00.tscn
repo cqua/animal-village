@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4h4c7ypqoxx"]
+
+[ext_resource type="PackedScene" uid="uid://b03736dykcxqn" path="res://assets/models/terrain/acre00.glb" id="1_plhuc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plhuc"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="acre00" instance=ExtResource("1_plhuc")]
+
+[node name="acre00" parent="." index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_plhuc")
