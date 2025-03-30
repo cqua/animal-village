@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://4i7w6cguajrn"]
+[gd_scene load_steps=14 format=4 uid="uid://4i7w6cguajrn"]
 
 [ext_resource type="Script" uid="uid://ddqvh7qfjeyus" path="res://entities/player/render/player_render.gd" id="1_d2ray"]
 [ext_resource type="Material" uid="uid://qsf4eq3d5gqa" path="res://assets/materials/player/villager.tres" id="2_lo6fq"]
 [ext_resource type="Material" uid="uid://bvddp4v2cvy16" path="res://assets/materials/player/villager_fur.tres" id="3_2y3hq"]
+[ext_resource type="PackedScene" uid="uid://dtbpk3am0kn7r" path="res://assets/models/tools/bugnet.glb" id="4_2y3hq"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_0uwbi"]
 size = Vector3(0.5, 0.5, 1.5)
@@ -877,6 +878,14 @@ skin = SubResource("Skin_2y3hq")
 [node name="Tail" type="MeshInstance3D" parent="metarig/Skeleton3D"]
 mesh = SubResource("ArrayMesh_l8va6")
 skin = SubResource("Skin_2y3hq")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="metarig/Skeleton3D"]
+transform = Transform3D(-0.164994, -0.982125, 0.0905907, 0.985107, -0.159592, 0.0639925, -0.0483911, 0.0997998, 0.99383, -1.17579, 1.57133, -0.0169708)
+bone_name = "hand.R"
+bone_idx = 14
+
+[node name="bugnet" parent="metarig/Skeleton3D/BoneAttachment3D" instance=ExtResource("4_2y3hq")]
+transform = Transform3D(-1, 8.74228e-08, -1.74846e-07, -8.74228e-08, -1, -7.64274e-15, -1.74846e-07, 7.64274e-15, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

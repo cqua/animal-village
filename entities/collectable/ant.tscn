@@ -14,7 +14,7 @@ shading_mode = 0
 albedo_texture = ExtResource("3_xtufi")
 texture_filter = 2
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0wrda"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xtufi"]
 _surfaces = [{
 "aabb": AABB(-0.21, 0, -0.4, 0.42, 0.0763835, 0.8),
 "format": 34896613377,
@@ -44,7 +44,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/3////9/yML//wAAAADNwv//AAD/f8TC/3+fawAA0cIAAAAA/3/Iwv9/n2sAAM3C/3////9/xMIAAAAAAADRwgAAAAD//32+/3////9/gr7/f59r//94vgAAAAD/f4a+/3+fa///fb7//wAA/3+Cvv//AAD//3i+/3////9/hr6W5txymuYPc5PmsHKd5jxz2/JnmQ/zZJmw8mqZPPNhmf3ygZox84Ka0PKAmlzzgpp95f5yfOUyc37l0XJ75V1z")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_0wrda")
+shadow_mesh = SubResource("ArrayMesh_xtufi")
 
 [node name="Ant" type="Area3D"]
 script = ExtResource("1_bsa6e")

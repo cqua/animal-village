@@ -19,6 +19,7 @@ func _ready():
     add_child(DayClock)
     dialog_box = load("res://ui/dialog_box/dialog_box.tscn").instantiate()
     add_child(dialog_box)
+    dialog_box.dialog_ended.connect(unpause.bind())
 
 func log(message, color=Color.WHITE):
     Logger.log(str(message), color)
@@ -69,4 +70,3 @@ func unpause():
 func queue_dialog(message:String):
     paused = true
     dialog_box.queue(message)
-    dialog_box.dialog_ended.connect(unpause.bind())

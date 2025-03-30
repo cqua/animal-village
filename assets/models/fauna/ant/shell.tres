@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b625jt0ea2tu5"]
+
+[ext_resource type="Texture2D" uid="uid://wro8m2mqem2u" path="res://assets/sprites/items/artifacts/spr_lionspaw.png" id="1_6xpqs"]
+
+[resource]
+resource_name = "Material.003"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_6xpqs")
+texture_filter = 2
