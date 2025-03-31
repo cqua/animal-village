@@ -11,6 +11,8 @@ static func initialize():
 	
 	_slots[0].item = Item.ARTIFACT_LIONSPAW
 	_slots[0].count = 4
+	_slots[1].item = Item.TOOL_BUGNET
+	_slots[1].count = 1
 
 static func get_slot_at(n:int) -> ItemSlot:
 	return _slots[n]

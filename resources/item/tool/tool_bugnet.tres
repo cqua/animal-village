@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b17wjm76687kv"]
+
+[ext_resource type="Script" uid="uid://cjt11xrfe864o" path="res://resources/item/item.gd" id="1_2hqqf"]
+[ext_resource type="Texture2D" uid="uid://dby46e1cjm4xt" path="res://assets/sprites/items/tools/spr_bugnet.png" id="2_s34bd"]
+
+[resource]
+script = ExtResource("1_2hqqf")
+name = "Bugnet"
+item_type = 4
+sprite = ExtResource("2_s34bd")
+stack_size = 1

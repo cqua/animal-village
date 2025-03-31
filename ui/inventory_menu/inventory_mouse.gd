@@ -28,7 +28,7 @@ func _process(delta):
 		#UI.unpause()
 	held_item_sprite.global_position = UI.get_mouse_position_screen()
 	
-	if Input.is_action_just_released("Interact") and grabbed_slot_button:
+	if Input.is_action_just_released("UseTool") and grabbed_slot_button:
 		drop_slot()
 	
 	if Input.is_action_just_pressed('OpenMenu'):

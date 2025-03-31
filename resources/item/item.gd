@@ -17,6 +17,8 @@ enum ItemType {
 
 static var NONE:Item
 static var ARTIFACT_LIONSPAW:Item
+static var TOOL_BUGNET:Item
 
 static func load():
 	ARTIFACT_LIONSPAW = load("res://resources/item/artifacts/artifact_lionspaw.tres")
+	TOOL_BUGNET = load("res://resources/item/tool/tool_bugnet.tres")
