@@ -8,4 +8,4 @@ script = ExtResource("1_24phi")
 name = "Ant"
 item_type = 1
 sprite = ExtResource("2_ip6wp")
-stack_size = 16
+stack_size = 1

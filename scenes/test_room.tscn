@@ -1,29 +1,149 @@
-[gd_scene load_steps=5 format=3 uid="uid://busbvkpd8mndt"]
+[gd_scene load_steps=18 format=3 uid="uid://busbvkpd8mndt"]
 
-[ext_resource type="PackedScene" uid="uid://bj0fqpbrqhsyi" path="res://cameras/orbit_camera/orbit_camera.tscn" id="1_im37l"]
+[ext_resource type="PackedScene" uid="uid://c6s67f3314bmy" path="res://entities/player/controller/player.tscn" id="1_4adyp"]
+[ext_resource type="Script" uid="uid://b81bf0q12x4w3" path="res://scenes/test_scene.gd" id="1_503t6"]
+[ext_resource type="Material" uid="uid://gec52d3x22qs" path="res://assets/materials/flooring.tres" id="1_vqwjj"]
+[ext_resource type="PackedScene" uid="uid://celtdj0en2gwg" path="res://cameras/dolly_camera/dolly_camera.tscn" id="2_h8avn"]
+[ext_resource type="PackedScene" uid="uid://ca50o4f8ximul" path="res://entities/debug/cube.tscn" id="3_h8avn"]
+[ext_resource type="PackedScene" uid="uid://35pxag6p5amm" path="res://entities/areas/warp_area/warp_area.tscn" id="6_mous7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4adyp"]
-cull_mode = 1
+[sub_resource type="BoxShape3D" id="BoxShape3D_4adyp"]
+size = Vector3(5, 0.5, 5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_h8avn"]
-material = SubResource("StandardMaterial3D_4adyp")
-size = Vector3(8, 8, 8)
+[sub_resource type="BoxShape3D" id="BoxShape3D_h8avn"]
+size = Vector3(5, 3, 0.5)
 
-[sub_resource type="Environment" id="Environment_im37l"]
-background_mode = 1
-ambient_light_source = 2
-ambient_light_color = Color(0.419813, 0.419813, 0.419813, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_503t6"]
+size = Vector3(1.5, 3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vqwjj"]
+size = Vector3(0.5, 3, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mous7"]
+size = Vector3(2, 0.5, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sg3ht"]
+size = Vector3(2, 3, 0.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vqwjj"]
+material = ExtResource("1_vqwjj")
+size = Vector2(5, 5)
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_503t6"]
+material = ExtResource("1_vqwjj")
+size = Vector2(2, 2)
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_mous7"]
+material = ExtResource("1_vqwjj")
+size = Vector2(5, 4)
+
+[sub_resource type="QuadMesh" id="QuadMesh_sg3ht"]
+material = ExtResource("1_vqwjj")
+flip_faces = true
+size = Vector2(5, 4)
+orientation = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_crnqe"]
+material = ExtResource("1_vqwjj")
+size = Vector2(5, 4)
+orientation = 0
 
 [node name="TestRoom" type="Node3D"]
+script = ExtResource("1_503t6")
 
-[node name="OrbitCamera" parent="." instance=ExtResource("1_im37l")]
-camera_distance = 12.0
+[node name="Collision" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_h8avn")
+[node name="FloorCollision" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/FloorCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_4adyp")
+
+[node name="NorthWall" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/NorthWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -2.75)
+shape = SubResource("BoxShape3D_h8avn")
+
+[node name="SouthEastWall" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/SouthEastWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 1.5, 4.5)
+shape = SubResource("BoxShape3D_503t6")
+
+[node name="EastWall" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/EastWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 1.5, 0)
+shape = SubResource("BoxShape3D_vqwjj")
+
+[node name="WestWall" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/WestWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 1.5, 0)
+shape = SubResource("BoxShape3D_vqwjj")
+
+[node name="SouthWestWall" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/SouthWestWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 1.5, 4.5)
+shape = SubResource("BoxShape3D_503t6")
+
+[node name="EntranceFloorCollision" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/EntranceFloorCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 4.5)
+shape = SubResource("BoxShape3D_mous7")
+
+[node name="EntranceBackCollision" type="StaticBody3D" parent="Collision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision/EntranceBackCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 6.25)
+shape = SubResource("BoxShape3D_sg3ht")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Mesh"]
+mesh = SubResource("QuadMesh_vqwjj")
+skeleton = NodePath("../..")
+
+[node name="EntranceFloor" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5)
+mesh = SubResource("QuadMesh_503t6")
+skeleton = NodePath("../..")
+
+[node name="WallNorth" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2.5)
+mesh = SubResource("QuadMesh_mous7")
+skeleton = NodePath("../..")
+
+[node name="WallEast" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2, 0)
+mesh = SubResource("QuadMesh_sg3ht")
+skeleton = NodePath("../..")
+
+[node name="WallNorth2" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, 0)
+mesh = SubResource("QuadMesh_crnqe")
+skeleton = NodePath("../..")
+
+[node name="Player" parent="." instance=ExtResource("1_4adyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.09136)
+
+[node name="DollyCamera" parent="." instance=ExtResource("2_h8avn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6008, 0, 0.195871)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.881444, 0, 0.472289, -0.462566, 0.201864, 0.863298, -0.0953384, -0.979414, 0.177932, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_im37l")
+[node name="Cube" parent="." instance=ExtResource("3_h8avn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -1)
+
+[node name="Cube2" parent="." instance=ExtResource("3_h8avn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -1)
+
+[node name="WarpArea" parent="." instance=ExtResource("6_mous7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+path = "test_scene"

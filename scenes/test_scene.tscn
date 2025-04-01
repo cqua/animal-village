@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddjkvov6873fs"]
+[gd_scene load_steps=14 format=3 uid="uid://ddjkvov6873fs"]
 
 [ext_resource type="Script" uid="uid://b81bf0q12x4w3" path="res://scenes/test_scene.gd" id="1_sdibm"]
 [ext_resource type="PackedScene" uid="uid://c6s67f3314bmy" path="res://entities/player/controller/player.tscn" id="2_k76mg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cu6e1rrw03qdr" path="res://entities/environment/tree.tscn" id="7_rnaij"]
 [ext_resource type="PackedScene" uid="uid://bujwr0fpownab" path="res://entities/interactable/signpost/signpost.tscn" id="8_rnaij"]
 [ext_resource type="PackedScene" uid="uid://v4h4c7ypqoxx" path="res://assets/models/terrain/acre_00.tscn" id="9_h3xc6"]
+[ext_resource type="PackedScene" uid="uid://35pxag6p5amm" path="res://entities/areas/warp_area/warp_area.tscn" id="9_s36qc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3qnke"]
 ground_bottom_color = Color(0.297258, 0.366856, 0.501761, 1)
@@ -24,7 +25,7 @@ vertices = PackedVector3Array(-24, 2.25, -11, -22.25, 2.25, -9, -18, 2.25, -9, -
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5), PackedInt32Array(0, 6, 5), PackedInt32Array(4, 7, 3), PackedInt32Array(4, 9, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(13, 10, 9), PackedInt32Array(13, 9, 14), PackedInt32Array(10, 8, 9), PackedInt32Array(14, 15, 13), PackedInt32Array(14, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(21, 18, 17), PackedInt32Array(21, 17, 22), PackedInt32Array(22, 23, 21), PackedInt32Array(18, 16, 17), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(24, 29, 28), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 37), PackedInt32Array(40, 39, 38), PackedInt32Array(38, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(42, 43, 33), PackedInt32Array(41, 42, 34), PackedInt32Array(34, 42, 37), PackedInt32Array(37, 42, 44), PackedInt32Array(44, 42, 33), PackedInt32Array(43, 32, 33), PackedInt32Array(31, 45, 30), PackedInt32Array(30, 45, 46), PackedInt32Array(49, 48, 47), PackedInt32Array(45, 48, 46), PackedInt32Array(46, 48, 49), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 54), PackedInt32Array(52, 54, 53), PackedInt32Array(52, 55, 56), PackedInt32Array(56, 55, 47), PackedInt32Array(47, 55, 57), PackedInt32Array(47, 57, 49), PackedInt32Array(39, 40, 58), PackedInt32Array(52, 53, 55), PackedInt32Array(57, 59, 49), PackedInt32Array(56, 60, 52), PackedInt32Array(39, 58, 47), PackedInt32Array(47, 58, 56), PackedInt32Array(63, 62, 61), PackedInt32Array(63, 61, 55), PackedInt32Array(55, 61, 57), PackedInt32Array(61, 62, 64), PackedInt32Array(65, 54, 50), PackedInt32Array(64, 66, 61), PackedInt32Array(61, 66, 67), PackedInt32Array(65, 50, 68), PackedInt32Array(68, 50, 69), PackedInt32Array(68, 69, 66), PackedInt32Array(66, 69, 70), PackedInt32Array(66, 70, 67), PackedInt32Array(72, 71, 73), PackedInt32Array(73, 71, 74), PackedInt32Array(74, 71, 75), PackedInt32Array(74, 76, 73), PackedInt32Array(77, 29, 78), PackedInt32Array(78, 29, 33), PackedInt32Array(33, 29, 79), PackedInt32Array(79, 29, 24), PackedInt32Array(79, 44, 33), PackedInt32Array(81, 80, 76), PackedInt32Array(76, 80, 67), PackedInt32Array(76, 67, 70), PackedInt32Array(76, 70, 73), PackedInt32Array(84, 83, 82), PackedInt32Array(86, 85, 87), PackedInt32Array(87, 85, 88), PackedInt32Array(84, 82, 89), PackedInt32Array(89, 82, 87), PackedInt32Array(87, 88, 89), PackedInt32Array(90, 84, 91), PackedInt32Array(91, 84, 89), PackedInt32Array(82, 83, 92), PackedInt32Array(94, 93, 95), PackedInt32Array(95, 93, 96), PackedInt32Array(92, 97, 82), PackedInt32Array(82, 97, 93), PackedInt32Array(97, 96, 93), PackedInt32Array(98, 97, 99), PackedInt32Array(99, 97, 92)]
 agent_radius = 1.0
 
-[node name="Node3D" type="Node3D"]
+[node name="TestScene" type="Node3D"]
 script = ExtResource("1_sdibm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -88,3 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.695626, 0.0114155, 0.155663
 
 [node name="DollyCamera" parent="." instance=ExtResource("3_udigi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113349, 0, 2.01391)
+
+[node name="WarpArea" parent="." instance=ExtResource("9_s36qc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16473, 0, -0.891447)
+path = "test_room"

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-var Logger:Logger
+@onready var transition_prefab := preload("res://ui/transitions/fade/transition_rect.tscn")
+var logger:Logger
 var DayClock
 var dialog_box:Control
 var paused = false
@@ -8,11 +9,13 @@ var paused = false
 var current_menu:Control
 var InteractLabel:Control
 
+var transition_rect:Control
+
 @onready var pause_buffer := $PauseBuffer
 
 func _ready():
-	Logger = load("res://ui/logger/logger.tscn").instantiate()
-	add_child(Logger)
+	logger = load("res://ui/logger/logger.tscn").instantiate()
+	add_child(logger)
 	InteractLabel = load("res://ui/interact_label/interact_label.tscn").instantiate()
 	add_child(InteractLabel)
 	DayClock = load("res://ui/day_clock/day_clock.tscn").instantiate()
@@ -22,7 +25,7 @@ func _ready():
 	dialog_box.dialog_ended.connect(unpause.bind())
 
 func log(message, color=Color.WHITE):
-	Logger.log(str(message), color)
+	logger.log(str(message), color)
 	
 func get_camera() -> Camera3D:
 	var viewport := get_viewport()
@@ -70,3 +73,25 @@ func unpause():
 func queue_dialog(message:String):
 	paused = true
 	dialog_box.queue(message)
+
+func fade_out():
+	paused = true
+	if transition_rect:
+		transition_rect.queue_free()
+		transition_rect = null
+	
+	transition_rect = transition_prefab.instantiate()
+	add_child(transition_rect)
+	transition_rect.fadeout(1.5)
+	await transition_rect.transition_finished
+
+func fade_in():
+	if transition_rect:
+		transition_rect.queue_free()
+		transition_rect = null
+	
+	transition_rect = transition_prefab.instantiate()
+	add_child(transition_rect)
+	transition_rect.fadein(1.5)
+	await transition_rect.transition_finished
+	paused = false

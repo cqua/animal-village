@@ -45,9 +45,13 @@ static func create_item_pickup(item:Item, position:Vector3):
 	pickup.position = position
 	pickup.set_item(item)
 
-
 static func spawn_bug(item:Item, position:Vector3):
 	var bug = bug_prefab.instantiate()
 	root.add_child(bug)
 	bug.position = position
 	bug.run_away()
+
+static func load_scene(path: String) -> void:
+	await UI.fade_out()
+	root.get_tree().call_deferred('change_scene_to_file', "res://scenes/%s.tscn" % [path])
+	await UI.fade_in()

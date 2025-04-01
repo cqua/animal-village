@@ -37,7 +37,9 @@ func _process(delta):
 	else:
 		if Player.current_action == Player.Action.Attack:
 			Player.reset_action()
-		if interact_target and position.distance_to(interact_target.global_position) < interact_target.interact_radius:
+		if (interact_target and 
+				position.distance_to(interact_target.global_position) < 
+				interact_target.interact_radius):
 			Player.reset_action()
 			interact_target.interact()
 			interact_target = null
@@ -115,21 +117,22 @@ func _physics_process(delta):
 
 		move_and_slide()
 		
-		if Player.current_action == Player.Action.Ready:
+		if Game.cursor and Input.is_action_pressed("UseTool") and Player.current_action != Player.Action.Run:
 			var cursor_pos = Game.cursor.global_position
 			var vector_to_cursor = cursor_pos - global_position
 			target_facing_angle = Vector2(vector_to_cursor.x, vector_to_cursor.z).normalized().angle()
 		
-		if velocity.x != 0 or velocity.z != 0 or Player.current_action == Player.Action.Ready:
+		if velocity.x != 0 or velocity.z != 0 or Input.is_action_pressed("UseTool"):
 			facing_angle = lerp_angle(facing_angle,target_facing_angle, .15)
 		render.set_velocity(velocity)
 	render.set_target_facing(facing_angle)
 
 func set_interact_target():
-	var target = Game.cursor.get_first_interactable()
-	if target:
-		interact_target = target
-		nav_agent.target_position = interact_target.global_position
+	if Game.cursor:
+		var target = Game.cursor.get_first_interactable()
+		if target:
+			interact_target = target
+			nav_agent.target_position = interact_target.global_position
 
 func clear_interact_target():
 	interact_target = null

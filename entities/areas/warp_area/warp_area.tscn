@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://35pxag6p5amm"]
+
+[ext_resource type="Script" uid="uid://difpcn656b5kt" path="res://entities/areas/warp_area/warp_area.gd" id="1_lrys2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_62n1n"]
+
+[node name="WarpArea" type="Area3D"]
+script = ExtResource("1_lrys2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_62n1n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
