@@ -23,4 +23,3 @@ func fadein(seconds:float):
 	speed = 1/seconds
 	target_alpha = 0
 	modulate.a = 1
-	

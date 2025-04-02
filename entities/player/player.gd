@@ -56,6 +56,3 @@ static func set_action(action:Action):
 
 static func reset_action():
 	current_action = Action.None
-
-static func bug_catch(bug:Insect):
-	bug.interact()

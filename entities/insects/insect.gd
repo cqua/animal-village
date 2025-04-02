@@ -1,4 +1,4 @@
-extends Interactable
+extends Area3D
 class_name Insect
 
 @export var item:Item
@@ -27,7 +27,7 @@ func _process(delta):
 	else:
 		movement_decision()
 
-func interact():
+func collect():
 	if Inventory.add_item(item):
 		queue_free()
 
@@ -49,6 +49,3 @@ func run_away():
 	target_angle = PI
 	facing_angle = target_angle
 	speed *= 8
-
-func get_label():
-	return item.name

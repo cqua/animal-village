@@ -18,6 +18,7 @@ var pause_buffer:float
 
 var interact_target:Node3D
 var in_forced_rotation:=false
+var in_forced_movement:=false
 
 func _ready():
 	Player.set_controller(self)
@@ -87,7 +88,7 @@ func _physics_process(delta):
 			in_forced_rotation = false
 	else:
 	
-		if interact_target:
+		if interact_target or in_forced_movement:
 			#follow path to target
 			var direction = (nav_agent.get_next_path_position() - position).normalized()
 			direction.y = 0
@@ -141,3 +142,7 @@ func force_rotation(angle):
 	target_facing_angle = angle
 	in_forced_rotation = true
 	render.set_velocity(Vector3.ZERO)
+
+func force_move_to(position):
+	nav_agent.target_position = position
+	in_forced_movement = true

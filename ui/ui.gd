@@ -82,7 +82,7 @@ func fade_out():
 	
 	transition_rect = transition_prefab.instantiate()
 	add_child(transition_rect)
-	transition_rect.fadeout(1.5)
+	transition_rect.fadeout(.5)
 	await transition_rect.transition_finished
 
 func fade_in():
@@ -92,6 +92,6 @@ func fade_in():
 	
 	transition_rect = transition_prefab.instantiate()
 	add_child(transition_rect)
-	transition_rect.fadein(1.5)
+	transition_rect.fadein(.5)
 	await transition_rect.transition_finished
 	paused = false

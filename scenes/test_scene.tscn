@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6s67f3314bmy" path="res://entities/player/controller/player.tscn" id="2_k76mg"]
 [ext_resource type="PackedScene" uid="uid://celtdj0en2gwg" path="res://cameras/dolly_camera/dolly_camera.tscn" id="3_udigi"]
 [ext_resource type="PackedScene" uid="uid://dwpaokj0omrl2" path="res://entities/collectable/seashell.tscn" id="5_bid1j"]
-[ext_resource type="PackedScene" uid="uid://cmk38m7o256dr" path="res://entities/collectable/ant.tscn" id="6_jfq8d"]
+[ext_resource type="PackedScene" uid="uid://cmk38m7o256dr" path="res://entities/insects/ant.tscn" id="6_jfq8d"]
 [ext_resource type="PackedScene" uid="uid://cu6e1rrw03qdr" path="res://entities/environment/tree.tscn" id="7_rnaij"]
 [ext_resource type="PackedScene" uid="uid://bujwr0fpownab" path="res://entities/interactable/signpost/signpost.tscn" id="8_rnaij"]
 [ext_resource type="PackedScene" uid="uid://v4h4c7ypqoxx" path="res://assets/models/terrain/acre_00.tscn" id="9_h3xc6"]
@@ -91,5 +91,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.695626, 0.0114155, 0.155663
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113349, 0, 2.01391)
 
 [node name="WarpArea" parent="." instance=ExtResource("9_s36qc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16473, 0, -0.891447)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 5.20383, 0, -7.04086)
 path = "test_room"
