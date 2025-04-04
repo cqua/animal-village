@@ -11,6 +11,7 @@ var net_blend :float
 
 func _ready():
 	Player.set_render(self)
+	update_tool()
 
 func set_target_facing(facing_angle:float):
 	target_facing = Vector2.from_angle(facing_angle)

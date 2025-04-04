@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://busbvkpd8mndt"]
+[gd_scene load_steps=20 format=3 uid="uid://busbvkpd8mndt"]
 
 [ext_resource type="PackedScene" uid="uid://c6s67f3314bmy" path="res://entities/player/controller/player.tscn" id="1_4adyp"]
 [ext_resource type="Script" uid="uid://b81bf0q12x4w3" path="res://scenes/test_scene.gd" id="1_503t6"]
@@ -54,6 +54,12 @@ size = Vector3(2, 0.5, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_sg3ht"]
 size = Vector3(2, 3, 0.5)
 
+[sub_resource type="Environment" id="Environment_mous7"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.52
+
 [node name="TestRoom" type="Node3D"]
 script = ExtResource("1_503t6")
 
@@ -90,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.09136)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6008, 0, 0.195871)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0)
+transform = Transform3D(0.946424, 0.10229, 0.306298, -0.322926, 0.299788, 0.897689, 0, -0.948506, 0.316758, 0, 0, 0)
 
 [node name="Cube" parent="." instance=ExtResource("3_h8avn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -1)
@@ -154,3 +160,6 @@ shape = SubResource("BoxShape3D_mous7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Collision/EntranceBackCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 6.25)
 shape = SubResource("BoxShape3D_sg3ht")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mous7")

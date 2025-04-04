@@ -22,7 +22,7 @@ static func load(_root:Node3D):
 	Inventory.initialize()
 	
 	item_pickup_prefab = load("res://entities/item_pickup/item_pickup.tscn")
-	bug_prefab = load("res://entities/collectable/ant.tscn")
+	bug_prefab = load("res://entities/insects/ant.tscn")
 	interact_highlight = load("res://entities/interact_highlight/interact_highlight.tscn").instantiate()
 	root.add_child(interact_highlight)
 	

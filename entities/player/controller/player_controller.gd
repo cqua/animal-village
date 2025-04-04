@@ -118,7 +118,7 @@ func _physics_process(delta):
 
 		move_and_slide()
 		
-		if Game.cursor and Input.is_action_pressed("UseTool") and Player.current_action != Player.Action.Run:
+		if not UI.paused and Game.cursor and Input.is_action_pressed("UseTool") and Player.current_action != Player.Action.Run:
 			var cursor_pos = Game.cursor.global_position
 			var vector_to_cursor = cursor_pos - global_position
 			target_facing_angle = Vector2(vector_to_cursor.x, vector_to_cursor.z).normalized().angle()
